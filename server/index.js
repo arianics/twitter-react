@@ -1,25 +1,25 @@
-//Lets require/import the HTTP module
-var http = require('http');
+var express = require('express');
+var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 var Twitter = require('node-tweet-stream');
 
-//Lets define a port we want to listen to
-var port=8080; 
+server.listen(8080);
 
-//We need a function which handles requests and send response
-function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
-}
+app.get('/', function (req, res) {
+  res.sendfile('app/index.html');
+});
 
-//Create a server
-var server = http.createServer(handleRequest);
+app.use(express.static('app'));
 
 var io = require('socket.io')(server);
 
-//Lets start our server
-server.listen(port, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", port);
+io.on('connection', function (socket) {
+  socket.on('tweet', function (data) {
+    console.log(data);
+  });
 });
+
 var t = new Twitter({
     consumer_key: 'BNeCOJYbXjiLCJZ7jiVroaSE1',
     consumer_secret: 'UHsotkw7h4JVINozdVgq2UdjhfWlkQYIcQF39fp0c9EomN8ObV',
