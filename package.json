@@ -1,0 +1,19 @@
+{
+  "name": "twitter-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arianics/twitter-react.git"
+  },
+  "author": "Arian Khosravi <arian.khosravi@aofl.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arianics/twitter-react/issues"
+  },
+  "homepage": "https://github.com/arianics/twitter-react#readme"
+}
