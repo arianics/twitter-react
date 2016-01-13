@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var serveStatic = require('serve-static');
 var app = express();
@@ -8,24 +10,24 @@ var twitterConfig = require('./twitter-config.json');
 var port = 3000;
 
 app.use(serveStatic(__dirname + '/../app'));
-server.listen(port, function(){
-    console.log("Server listening on: http://localhost:%s", port);
+server.listen(port, function() {
+  console.log('Server listening on: http://localhost:%s', port);
 });
 
 var t = new Twitter(twitterConfig);
 
-io.on('connection', function (socket) {
-  socket.on('tweet', function (data) {
+io.on('connection', function(socket) {
+  socket.on('tweet', function(data) {
     console.log(data);
   });
 });
 
-t.on('tweet', function (tweet) {
+t.on('tweet', function(tweet) {
   io.emit('tweet', tweet);
-//  console.log(tweet);
+  //  console.log(tweet);
 });
 
-t.on('error', function (err) {
+t.on('error', function() {
   console.log('Oh no');
 });
 
