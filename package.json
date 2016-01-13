@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/arianics/twitter-react/issues"
   },
-  "homepage": "https://github.com/arianics/twitter-react#readme"
+  "homepage": "https://github.com/arianics/twitter-react#readme",
+  "dependencies": {
+    "bower": "^1.7.2"
+  }
 }

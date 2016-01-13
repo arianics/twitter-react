@@ -1,0 +1,24 @@
+{
+  "name": "twitter-react",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Arian Khosravi <arian.khosravi@aofl.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/arianics/twitter-react",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "angular-route": "~1.4.8",
+    "primer-css": "~2.5.0"
+  }
+}
