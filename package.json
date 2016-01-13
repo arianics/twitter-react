@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,15 +17,11 @@
     "url": "https://github.com/arianics/twitter-react/issues"
   },
   "homepage": "https://github.com/arianics/twitter-react#readme",
-<<<<<<< HEAD
   "dependencies": {
-    "bower": "^1.7.2"
-=======
+    "bower": "^1.7.2",
+    "socket.io": "^1.4.4"
+  },
   "devDependencies": {
     "node-tweet-stream": "^1.9.1"
-  },
-  "dependencies": {
-    "socket.io": "^1.4.4"
->>>>>>> d98ddcff4e0e2e8230ac60594b571c8cfb87f958
   }
 }
