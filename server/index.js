@@ -4,6 +4,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var Twitter = require('node-tweet-stream');
+var twitterConfig = require('./twitter-config.json');
 var port = 3000;
 
 app.use(serveStatic(__dirname + '/../app'));
