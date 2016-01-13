@@ -3,7 +3,7 @@
   angular.module('myApp.twitterFeed', [])
 
   .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/view1', {
+    $routeProvider.when('/', {
         templateUrl: 'twitter-feed/index.html',
         controller: 'TwitterFeedController'
       });
