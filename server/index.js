@@ -1,38 +1,34 @@
-//Lets require/import the HTTP module
-var http = require('http');
-var Twitter = require('node-tweet-stream');
+'use strict';
 
-//Lets define a port we want to listen to
-var port=8080; 
-
-//We need a function which handles requests and send response
-function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
-}
-
-//Create a server
-var server = http.createServer(handleRequest);
-
+var express = require('express');
+var serveStatic = require('serve-static');
+var app = express();
+var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var Twitter = require('node-tweet-stream');
+var twitterConfig = require('./twitter-config.json');
+var port = 3000;
 
-//Lets start our server
-server.listen(port, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", port);
+app.use(serveStatic(__dirname + '/../app'));
+server.listen(port, function() {
+  console.log('Server listening on: http://localhost:%s', port);
 });
-var t = new Twitter({
-    consumer_key: 'BNeCOJYbXjiLCJZ7jiVroaSE1',
-    consumer_secret: 'UHsotkw7h4JVINozdVgq2UdjhfWlkQYIcQF39fp0c9EomN8ObV',
-    token: '2663713986-csn32g7a5jwto73sPXoO4CazqB258LHNfb0MEeZ',
-    token_secret: 'YVsZUPxv2HTOdYo3kSiFN8Nb2OLi5toLstqtiRC4EXetH'
+
+var t = new Twitter(twitterConfig);
+
+io.on('connection', function(socket) {
+  socket.on('tweet', function(data) {
+    console.log(data);
   });
- 
-t.on('tweet', function (tweet) {
-  io.emit('tweet', tweet);
 });
 
-t.on('error', function (err) {
+t.on('tweet', function(tweet) {
+  io.emit('tweet', tweet);
+  //  console.log(tweet);
+});
+
+t.on('error', function() {
   console.log('Oh no');
 });
- 
+
 t.track('pizza');

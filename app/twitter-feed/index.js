@@ -1,13 +1,19 @@
-'use strict';
+(function() {
+  'use strict';
+  angular.module('myApp.twitterFeed', [])
 
-angular.module('myApp.twitterFeed', ['ngRoute'])
-
-.config(['$routeProvider', function ($routeProvider) {
+  .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl: 'twitter-feed/index.html',
-      controller: 'TwitterFeedController'
-    });
-}])
-.controller('TwitterFeedController', [function () {
-    console.log('hello??');
-}]);
+        templateUrl: 'twitter-feed/index.html',
+        controller: 'TwitterFeedController'
+      });
+  }])
+    .controller('TwitterFeedController', [function() {
+      var socket = io.connect();
+      socket.on('tweet', function(tweet) {
+        if (tweet.lang === 'en') {
+          console.log(tweet);
+        }
+      });
+    }]);
+}());
