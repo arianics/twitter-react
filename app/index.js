@@ -6,5 +6,6 @@ angular.module('myApp', [
   'myApp.twitterFeed'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+  console.log('routeProvider main');
+  $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
