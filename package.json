@@ -19,6 +19,10 @@
   "homepage": "https://github.com/arianics/twitter-react#readme",
   "dependencies": {
     "bower": "^1.7.2",
+    "express": "^4.13.3",
+    "http": "0.0.0",
+    "node-tweet-stream": "^1.9.1",
+    "serve-static": "^1.10.0",
     "socket.io": "^1.4.4"
   },
   "devDependencies": {
