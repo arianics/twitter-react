@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/arianics/twitter-react/issues"
   },
-  "homepage": "https://github.com/arianics/twitter-react#readme"
+  "homepage": "https://github.com/arianics/twitter-react#readme",
+  "devDependencies": {
+    "node-tweet-stream": "^1.9.1"
+  },
+  "dependencies": {
+    "socket.io": "^1.4.4"
+  }
 }
