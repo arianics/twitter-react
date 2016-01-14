@@ -3,6 +3,7 @@
 
   angular.module('myApp', [
     'ngRoute',
+    'rx',
     'myApp.twitterFeed'
   ]).
   config(['$routeProvider', function($routeProvider) {
