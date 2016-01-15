@@ -8,16 +8,6 @@
         controller: 'TwitterFeedController'
       });
   }])
-<<<<<<< Updated upstream
-    .controller('TwitterFeedController', [function() {
-      var socket = io.connect();
-      socket.on('tweet', function(tweet) {
-        if (tweet.lang === 'en') {
-          console.log(tweet);
-        }
-      });
-    }]);
-=======
     .controller('TwitterFeedController', ['$scope', 'rx', '$http',
       function ($scope, rx, $http) {
         $scope.enTweets = [];
@@ -70,5 +60,4 @@
             });
           });
       }]);
->>>>>>> Stashed changes
 }());
