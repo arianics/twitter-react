@@ -19,6 +19,8 @@
   "dependencies": {
     "angular": "angularjs#~1.4.8",
     "angular-route": "~1.4.8",
-    "primer-css": "~2.5.0"
+    "primer-css": "~2.5.0",
+    "rx-angular": "angular-rx#~1.0.4",
+    "rxjs": "~4.0.7"
   }
 }

@@ -1,11 +1,12 @@
-(function() {
+(function () {
   'use strict';
   angular.module('myApp.twitterFeed', [])
 
-  .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {
+  .config(['$routeProvider', function ($routeProvider) {
+      $routeProvider.when('/', {
         templateUrl: 'twitter-feed/index.html',
-        controller: 'TwitterFeedController'
+        controller: 'TwitterFeedController',
+        css: 'twitter-feed/index.css'
       });
   }])
     .controller('TwitterFeedController', ['$scope', 'rx', '$http',
