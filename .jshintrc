@@ -22,5 +22,6 @@
   "node": true,
   "undef": true,
   "noarg": true,
-  "unused": true
+  "unused": true,
+  "esnext": true
 }

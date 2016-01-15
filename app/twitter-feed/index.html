@@ -1,1 +1,28 @@
+<<<<<<< Updated upstream
 Hello Twitter
+=======
+Hello Twitter
+<div class="columns">
+  <form ng-submit="addTag()" class="column one-half">
+    <label for="name">Search hashtag</label>
+    <input ng-model="searchTag" type="text" id="name">
+    <button class="btn" type="submit">Submit</button>
+  </form>
+  <div class="class=" column one-half"">
+    <span ng-repeat="tag in tagList track by $index">
+      {{tag}}
+      <button class="btn" type="button" ng-click="removeTag($index)">X</button>
+    </span>
+  </div>
+</div>
+<div class="columns">
+  <div class="column one-half">
+    <h2>English Tweets</h2>
+    <p ng-repeat="enT in enTweets">{{enT}}</p>
+  </div>
+  <div class="column one-half">
+    <h2>Italian Tweets</h2>
+    <p ng-repeat="itT in itTweets">{{itT}}</p>
+  </div>
+</div>
+>>>>>>> Stashed changes
